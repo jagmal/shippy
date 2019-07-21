@@ -4,3 +4,10 @@ For this process, we will be setting dev environment in Windows but deploying us
 
 Note: we are starting from scratch as previous attempt was not followed with enough attention. :)
 
+Sequence of scripts to be run inside each folder:
+--
+    >.\build.bat
+    >.\dockerize.bat
+    >.\run.bat
+
+    TODO: Learn ways to have targets defined in powershell script (similar to Makefile targets)

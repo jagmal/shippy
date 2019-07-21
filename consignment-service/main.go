@@ -4,8 +4,6 @@ package main
 import (
 	"context"
 	"log"
-	"net"
-	"sync"
 
 	// Import generated protobuf code
 	pb "github.com/jagmal/shippy/consignment-service/proto/consignment"
@@ -55,7 +53,7 @@ func (s *service) CreateConsignment(ctx context.Context, req *pb.Consignment,res
 	// Save our consignment
 	consignment, err := s.repo.Create(req)
 	if err != nil {
-		return nil, err
+		return err
 	}
 
 	// Return matching the 'Response' message we created in our
@@ -79,14 +77,14 @@ func main() {
 	// Create a new service
 	srv := micro.NewService(
 		// this name must match with the package name given in the protobuf definition
-		micro.Name("shippy.service.consignment")
+		micro.Name("shippy.service.consignment"),
 	)
 	srv.Init()
 
 	// Register our service with the gRPC server, this will tie our
 	// implementation into the auto-generated interface code for our
 	// protobuf definition.
-	pb.RegisterShippingServiceServer(srv.Server(), &service{repo})
+	pb.RegisterShippingServiceHandler(srv.Server(), &service{repo})
 
 	if err := srv.Run(); err != nil {
 		log.Fatal("failed to serve: %v", err)
