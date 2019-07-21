@@ -11,14 +11,14 @@ FROM golang:alpine as builder
 # be used to pull the latest code before building
 RUN apk --no-cache add git
 
-WORKDIR /app/shippy-cli-consignment
+WORKDIR /app/shippy-service-vessel
 
 # Copying current directory into the working directory on the image
 COPY . .
 
 RUN go mod download
 
-RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o shippy-cli-consignment
+RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o shippy-service-vessel
 
 # STEP 2
 
@@ -30,8 +30,6 @@ RUN mkdir /app
 WORKDIR /app
 
 # Copying executable(binary) from the builder image (instead of the host)
-COPY --from=builder /app/shippy-cli-consignment/shippy-cli-consignment .
-# Copy consignment.json from the local host machine
-COPY consignment.json .
+COPY --from=builder /app/shippy-service-vessel/shippy-service-vessel .
 
-CMD ["./shippy-cli-consignment"]
+CMD ["./shippy-service-vessel"]
