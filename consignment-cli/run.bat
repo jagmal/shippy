@@ -1,0 +1,1 @@
+docker run shippy-cli-consignment
