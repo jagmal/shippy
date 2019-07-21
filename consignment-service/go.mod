@@ -9,6 +9,7 @@ require (
 	github.com/golang/protobuf v1.3.2
 	github.com/gorilla/handlers v1.4.1 // indirect
 	github.com/gorilla/mux v1.7.3 // indirect
+	github.com/jagmal/shippy/vessel-service v0.0.0-20190721130050-6b19bdbfb7f1
 	github.com/kevinburke/ssh_config v0.0.0-20190630040420-2e50c441276c // indirect
 	github.com/kr/pty v1.1.8 // indirect
 	github.com/marten-seemann/qtls v0.3.2 // indirect

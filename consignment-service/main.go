@@ -4,6 +4,7 @@ package main
 import (
 	"context"
 	"log"
+	"sync"
 
 	// Import generated protobuf code
 	pb "github.com/jagmal/shippy/consignment-service/proto/consignment"

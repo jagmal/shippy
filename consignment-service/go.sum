@@ -135,6 +135,8 @@ github.com/hpcloud/tail v1.0.0/go.mod h1:ab1qPbhIpdTxEkNHXyeSf5vhxWSCs/tWer42PpO
 github.com/ijc/Gotty v0.0.0-20170406111628-a8b993ba6abd/go.mod h1:3LVOLeyx9XVvwPgrt2be44XgSqndprz1G18rSk8KD84=
 github.com/imdario/mergo v0.3.7/go.mod h1:2EnlNZ0deacrJVfApfmtdGgDfMuh/nq6Ok1EcJh5FfA=
 github.com/jagmal/shippy v0.0.0-20190721094916-9c37bf3f07eb h1:tz5CgMKW57lEbIsQKY5u/3/+x8wipddnSXCBvDi8BlE=
+github.com/jagmal/shippy/vessel-service v0.0.0-20190721130050-6b19bdbfb7f1 h1:4uzPW9Jz4v7wg+aABt/UIxlNuH1z/O40S0Xas+gbXpc=
+github.com/jagmal/shippy/vessel-service v0.0.0-20190721130050-6b19bdbfb7f1/go.mod h1:HOQjmyf5oAljCOzFpu35e4SJz94cK+eRWACCKy2//y4=
 github.com/jbenet/go-context v0.0.0-20150711004518-d14ea06fba99/go.mod h1:1lJo3i6rXxKeerYnT8Nvf0QmHCRC1n8sfWVwXF2Frvo=
 github.com/jessevdk/go-flags v1.4.0/go.mod h1:4FA24M0QyGHXBuZZK/XkWh8h0e1EYbRYJSGM75WSRxI=
 github.com/joncalhoun/qson v0.0.0-20170526102502-8a9cab3a62b1/go.mod h1:DFXrEwSRX0p/aSvxE21319menCBFeQO0jXpRj7LEZUA=
