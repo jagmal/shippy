@@ -1,3 +1,5 @@
 consignment-service/consignment-service
 consignment-cli/consignment-cli
 vessel-service/vessel-service.exe
+*/__debug_bin
+.vscode/
