@@ -2,8 +2,11 @@ package main
 
 import (
 	"context"
+	"fmt"
+
 	pb "github.com/jagmal/shippy/consignment-service/proto/consignment"
 	"go.mongodb.org/mongo-driver/mongo"
+	"go.mongodb.org/mongo-driver/bson"
 )
 
 type repository interface {
@@ -11,6 +14,7 @@ type repository interface {
 	GetAll() ([]*pb.Consignment, error)
 }
 
+// MongoRepository -
 type MongoRepository struct {
 	collection *mongo.Collection
 }
@@ -23,7 +27,12 @@ func (repository *MongoRepository) Create(consignment *pb.Consignment) error {
 
 // GetAll -
 func (repository *MongoRepository) GetAll() ([]*pb.Consignment, error) {
-	cur, err := repository.collection.Find(context.Background(), nil, nil)
+	cur, err := repository.collection.Find(context.Background(), bson.D{{}}, nil)
+	if err != nil {
+		fmt.Println("ERROR WHILE RUNNING FIND() command")
+		fmt.Println(err)
+		fmt.Println("-------------")
+	}
 	var consignments []*pb.Consignment
 	for cur.Next(context.Background()) {
 		var consignment *pb.Consignment
