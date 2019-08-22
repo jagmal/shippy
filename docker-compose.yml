@@ -23,9 +23,22 @@ services:
 #      DB_HOST: "mongodb://datastore:27017"
       DB_HOST: "mongodb://host.docker.internal:27017"
 
-  datastore:
-    image: mongo
-    volumes:
-      - 'E:/work/databases/mongo-db-store:/data/db'
+  user-service:
+    build: ./user-service
     ports:
-      - 27017:27017
+      - 50053:50053
+    environment:
+      MICRO_ADDRESS: ":50051"
+
+  user-cli:
+    build: ./user-cli
+  database:
+    image: postgres
+    ports:
+      - 5432:5432
+#  datastore:
+#    image: mongo
+#    volumes:
+#      - 'E:/work/databases/mongo-db-store:/data/db'
+#    ports:
+#      - 27017:27017
