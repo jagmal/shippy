@@ -31,5 +31,6 @@ WORKDIR /app
 
 # Copying executable(binary) from the builder image (instead of the host)
 COPY --from=builder /app/shippy-cli-user/shippy-cli-user .
+RUN chmod +x ./shippy-cli-user
 
 CMD ["./shippy-cli-user"]
